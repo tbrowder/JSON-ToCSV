@@ -2,7 +2,6 @@ unit module JSON::ToCSV;
 
 use JSON::Fast;
 
-#export &json-to-csv, &flatten-json;
 
 sub escape-csv(Str $v --> Str) {
     my $s = $v;
@@ -83,4 +82,3 @@ sub json-to-csv(
 
     return @lines.join("\n");
 }
-

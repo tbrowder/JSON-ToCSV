@@ -17,6 +17,13 @@ DESCRIPTION
 
 **JSON::ToCSV** is ...
 
+CREDITS
+=======
+
+The bulk of the code in the bin file and the base module is courtesy of ChatGPT. Its couple of regex errors were corrected, as was its bad routine export syntax.
+
+The author made some style changes in the code, and renamed the bin file to remove the '.raku' extension.
+
 AUTHOR
 ======
 
