@@ -1,0 +1,30 @@
+=begin pod
+
+=head1 NAME
+
+B<JSON::ToCSV> - Provides routines to convert JSON files to CSV tables
+
+
+=head1 SYNOPSIS
+
+=begin code :lang<raku>
+
+use JSON::ToCSV;
+
+=end code
+
+=head1 DESCRIPTION
+
+B<JSON::ToCSV> is ...
+
+=head1 AUTHOR
+
+Tom Browder <tbrowder@acm.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+© 2025 Tom Browder
+
+This library is free software; you may redistribute it or modify it under the Artistic License 2.0.
+
+=end pod

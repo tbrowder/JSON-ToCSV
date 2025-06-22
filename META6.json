@@ -1,0 +1,25 @@
+{
+  "auth": "zef:tbrowder",
+  "authors": [
+    "Tom Browder"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Provides routines to convert JSON files to CSV tables\n",
+  "license": "Artistic-2.0",
+  "name": "JSON::ToCSV",
+  "perl": "6.d",
+  "provides": {
+    "JSON::ToCSV": "lib/JSON/ToCSV.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
