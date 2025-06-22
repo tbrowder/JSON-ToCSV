@@ -2,18 +2,28 @@ unit module JSON::ToCSV;
 
 use JSON::Fast;
 
+#export &json-to-csv, &flatten-json;
+
 sub escape-csv(Str $v --> Str) {
     my $s = $v;
-    $s ~~ s:g/"/""/;
-    return $s ~~ /[",\n]/ ?? "\"$s\"" !! $s;
+    # this ChatGPT line throws:
+    #    $s ~~ s:g/"/""/;
+    $s ~~ s:g/\"/""/;
+    # this ChatGPT line throws:
+    #    return $s ~~ /[",\n]/ ?? "\"$s\"" !! $s;
+    if $s ~~ /[\"\,\n]/ {
+        $s = "\"$s\"";
+    }
+    $s
 }
 
 sub flatten-json(
     $data,
     :$dot = True,
     :$with-types = True,
-    :$prefix = ''
-) returns Hash {
+    :$prefix = '',
+    --> Hash
+) is export {
     my %flat;
 
     given $data {
@@ -47,8 +57,9 @@ sub json-to-csv(
     :$dot = True,
     :$with-types = True,
     :@filter-keys = (),
-    :$escape = True
-) returns Str {
+    :$escape = True,
+    --> Str
+) is export {
 
     die "Input must be an array of hashes" unless $json-data ~~ Array;
 
@@ -73,4 +84,3 @@ sub json-to-csv(
     return @lines.join("\n");
 }
 
-export &json-to-csv, &flatten-json;
